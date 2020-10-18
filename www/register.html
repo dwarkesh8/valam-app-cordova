@@ -26,6 +26,7 @@
         label {
             font-size: 12px;
         }
+        button#btnSubmit { padding-bottom: 5px; }
     </style>
 </head>
 <body>
@@ -40,7 +41,7 @@
              <form action="#">
                 <div class="form-group">
                     <label for="websiteUsername"><span class="fa fa-id-card"></span> Website Username</label>
-                    <input type="text" class="form-control form-control-sm" name="website_username" placeholder="Ex: Dwarkesh" id="websiteUsername">
+                    <input type="text" class="form-control form-control-sm" name="website_username" placeholder="Ex: Dwarkesh" id="websiteUsername" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="pwd"><span class="fa fa-lock"></span> Password:</label>
@@ -52,28 +53,28 @@
                 </div>
                 <div class="form-group">
                     <label for="surname"><span class="fa fa-id-card"></span> Surname</label>
-                    <input type="text" class="form-control form-control-sm" name="surname" placeholder="Ex: Purohit, Shukla, Joshi etc." id="surname">
+                    <input type="text" class="form-control form-control-sm" name="surname" placeholder="Ex: Purohit, Shukla, Joshi etc." id="surname" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="firstName"><span class="fa fa-id-card"></span> first Name</label>
-                    <input type="text" class="form-control form-control-sm" placeholder="" id="firstName">
+                    <input type="text" class="form-control form-control-sm" placeholder="" id="firstName" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="fatherName"><span class="fa fa-id-card"></span> Father Name</label>
-                    <input type="text" class="form-control form-control-sm" name="father_name" placeholder="" id="fatherName">
+                    <input type="text" class="form-control form-control-sm" name="father_name" placeholder="" id="fatherName" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="motherName"><span class="fa fa-envelope"></span> Mother Name</label>
-                    <input type="text" class="form-control form-control-sm" name="mother_name" placeholder="" id="motherName">
+                    <input type="text" class="form-control form-control-sm" name="mother_name" placeholder="" id="motherName" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="nationality"><span class="fa fa-globe"></span> Nationality</label>
-                    <input type="text" class="form-control form-control-sm" name="nationality" placeholder="Ex: Indian, American etc." id="nationality">
+                    <input type="text" class="form-control form-control-sm" name="nationality" placeholder="Ex: Indian, American etc." id="nationality" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label><span class="fa fa-info"></span> Status</label><br>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="status" id="statusLive" value="live">
+                      <input class="form-check-input" type="radio" name="status" id="statusLive" value="live" checked>
                       <label class="form-check-label" for="statusLive">Live</label>
                   </div>
                   <div class="form-check form-check-inline">
@@ -105,12 +106,12 @@
                     <option value="add_new" id="addNewGotr">Add New</option>
                 </select>
                 <br>
-                <input type="text" name="custom_gotr" class="form-control form-control-sm" placeholder="Enter new gotr" id="inputTextGotr" hidden="">
+                <input type="text" name="custom_gotr" class="form-control form-control-sm" placeholder="Enter new gotr" id="inputTextGotr" hidden="" autocomplete="off">
             </div>
             <div class="form-group">
                 <label><span class="fa fa-male"></span><span class="fa fa-female"></span> Gender</label><br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gender" id="radioMale" value="male">
+                  <input class="form-check-input" type="radio" name="gender" id="radioMale" value="male" checked>
                   <label class="form-check-label" for="radioMale">Male</label>
               </div>
               <div class="form-check form-check-inline">
@@ -125,7 +126,7 @@
           <div class="form-group">
             <label><span class="fa fa-heart"></span> Maritial Status</label><br>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="maritial_status" id="radioUnmarried" value="unmarried">
+              <input class="form-check-input" type="radio" name="maritial_status" id="radioUnmarried" value="unmarried" checked>
               <label class="form-check-label" for="radioUnmarried">Unmarried</label>
           </div>
           <div class="form-check form-check-inline">
@@ -139,23 +140,23 @@
     </div>
     <div class="form-group">
         <label for="native"><span class="fa fa-home"></span> Native place</label>
-        <input type="text" class="form-control form-control-sm" name="native" placeholder="Ex: Nadiad, Ahmedabad etc." id="native">
+        <input type="text" class="form-control form-control-sm" name="native" placeholder="Ex: Nadiad, Ahmedabad etc." id="native" autocomplete="off">
     </div>
     <div class="form-group">
         <label for="current_place"><span class="fa fa-home"></span> Current place</label>
-        <input type="text" class="form-control form-control-sm" name="current_place" placeholder="Ex: Ahmedabad, Nadiad etc." id="current_place">
+        <input type="text" class="form-control form-control-sm" name="current_place" placeholder="Ex: Ahmedabad, Nadiad etc." id="current_place" autocomplete="off">
     </div>
     <div class="form-group">
         <label for="address"><span class="fa fa-home"></span> Address</label>
-        <textarea class="form-control form-control-sm" placeholder="Ex: D/1, Ambika society, Nadiad, Gujarat"></textarea>
+        <textarea class="form-control form-control-sm" placeholder="Ex: D/1, Ambika society, Nadiad, Gujarat" id="address"></textarea>
     </div>
     <div class="form-group">
         <label for="occupation"><span class="fa fa-home"></span> Occupation</label>
-        <input type="text" class="form-control form-control-sm" placeholder="Ex: doctor, engineer, teacher etc." id="occupation">
+        <input type="text" class="form-control form-control-sm" placeholder="Ex: doctor, engineer, teacher etc." id="occupation" autocomplete="off">
     </div>
     <div class="form-group">
-        <label><span class="fa fa-graduation-cap"></span> Education</label>
-        <select class="form-control form-control-sm" name="education">
+        <label for="education"><span class="fa fa-graduation-cap"></span> Education</label>
+        <select class="form-control form-control-sm" name="education" id="education">
             <option value="below_10th">Below 10th</option>
             <option value="10th_pass">10th pass</option>
             <option value="12th_pass">12th pass</option>
@@ -166,19 +167,19 @@
     </div>
     <div class="form-group">
         <label for="contact"><span class="fa fa-mobile"></span> Contact no. (<i class="fab fa-whatsapp" aria-hidden="true"></i>)</label>
-        <input type="text" class="form-control form-control-sm" name="contact" placeholder="+91-2233658545" id="contact">
+        <input type="number" min="0" class="form-control form-control-sm" name="contact" placeholder="912233658545" id="contact" autocomplete="off">
     </div>
     <div class="form-group">
         <label for="landlineNo"><span class="fa fa-phone"></span> Landline no.</label>
-        <input type="text" class="form-control form-control-sm" name="landline_no" placeholder="02697-238743" id="landlineNo">
+        <input type="number" min="0" class="form-control form-control-sm" name="landline_no" placeholder="02697238743" id="landlineNo" autocomplete="off">
     </div>
     <div class="form-group">
-        <label for="officeNo"><span class="fa fa-telephone"></span> Office no.</label>
-        <input type="text" class="form-control form-control-sm" name="office_no" placeholder="02697-238743" id="officeNo">
+        <label for="officeNo"><span class="fa fa-phone"></span> Office no.</label>
+        <input type="number" min="0" class="form-control form-control-sm" name="office_no" placeholder="02697238743" id="officeNo" autocomplete="off">
     </div>
     <div class="form-group">
         <label for="job"><span class="fa fa-suitcase"></span> Job detail</label>
-        <input type="text" class="form-control form-control-sm" name="job" placeholder="Ex: Self-employed, Govt. Job, Private Job etc." id="job">
+        <input type="text" class="form-control form-control-sm" name="job" placeholder="Ex: Self-employed, Govt. Job, Private Job etc." id="job" autocomplete="off">
     </div>
     <div class="form-group">
         <label for="otherDetails"><span class="fa fa-info"></span> Other detail</label>
@@ -191,7 +192,7 @@
     <div class="form-group">
         <label><span class="fa fa-envelope"></span> Do you have spacs?</label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="spacs" id="" value="spacs_yes">
+          <input class="form-check-input" type="radio" name="spacs" id="" value="spacs_yes" checked>
           <label class="form-check-label" for="">Yes</label>
       </div>
       <div class="form-check form-check-inline">
@@ -202,7 +203,7 @@
   <div class="form-group">
     <label><span class="fa fa-envelope"></span> Physically challenged?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" id="" name="physically_challenged" value="physically_challenged_yes">
+      <input class="form-check-input" type="radio" id="" name="physically_challenged" value="physically_challenged_yes" checked>
       <label class="form-check-label" for="">Yes</label>
   </div>
   <div class="form-check form-check-inline">
@@ -216,10 +217,10 @@
 </div>
 <div class="form-group form-check">
     <label class="form-check-label">
-      <input class="form-check-input" type="checkbox" checked> Agree with <a href="#!" id="tc">T&C</a>
+      <input class="form-check-input" type="checkbox" id="agreeTC" checked> Agree with <a href="#!" id="tc">T&C</a>
   </label>
 </div>
-<button type="button" class="btn btn-sm btn-primary"> <span class="fa fa-save"></span> Submit</button>
+<button type="button" class="btn btn-sm btn-primary" id="btnSubmit"> <span class="fa fa-save"></span> Submit</button>
 </form> 
 </div>
 </div>
@@ -243,6 +244,96 @@
             else {
                 $("input#inputTextGotr").attr('hidden', true);
             }
+        });
+        //form submit process
+        $("button#btnSubmit").on("click", function(){
+          var username = $("#websiteUsername").val();
+          var password = $("#pwd").val();
+          var email = $("#email").val();
+          var surname = $("#surname").val();
+          var firstName = $("#firstName").val();
+          var fatherName = $("#fatherName").val();
+          var motherName = $("#motherName").val();
+          var nationality = $("#nationality").val();
+          var selectGotr = $("#selectGotr").val();
+          var dob = $("#dob").val();
+          var native = $("#native").val();
+          var current_place = $("#current_place").val();
+          var address = $("#address").val();
+          var occupation = $("#occupation").val();
+          var education = $("#education").val();
+          var contact = $("#contact").val();
+          var landlineNo = $("#landlineNo").val();
+          var officeNo = $("#officeNo").val();
+          var hobby = $("#hobby").val();
+          var profilePhoto = $("#profilePhoto").val();
+          var agreeTC = $("#agreeTC").val();
+          if (username.length == 0) {
+            $("#websiteUsername").focus();
+          }
+          else if (password.length == 0) {
+            $("#pwd").focus();
+          }
+          else if (email.length == 0) {
+            $("#email").focus();
+          }
+          else if (surname.length == 0) {
+            $("#surname").focus();
+          }
+          else if (firstName.length == 0) {
+            $("#firstName").focus();
+          }
+          else if (fatherName.length == 0) {
+            $("#fatherName").focus();
+          }
+          else if (motherName.length == 0) {
+            $("#motherName").focus();
+          }
+          else if (motherName.length == 0) {
+            $("#motherName").focus();
+          }
+          else if (nationality.length == 0) {
+            $("#nationality").focus();
+          }
+          else if (selectGotr.length == 0) {
+            $("#selectGotr").focus();
+          }
+          else if (dob.length == 0) {
+            $("#dob").focus();
+          }
+          else if (native.length == 0) {
+            $("#native").focus();
+          }
+          else if (current_place.length == 0) {
+            $("#current_place").focus();
+          }
+          else if (address.length == 0) {
+            $("#address").focus();
+          }
+          else if (occupation.length == 0) {
+            $("#occupation").focus();
+          }
+          else if (education.length == 0) {
+            $("#education").focus();
+          }
+          else if (contact.length == 0 || contact.length > 14) {
+            $("#contact").focus();
+          }
+          else if (landlineNo.length == 0 || landlineNo.length > 12) {
+            $("#landlineNo").focus();
+          }
+          else if (officeNo.length == 0 || officeNo.length > 12) {
+            $("#officeNo").focus();
+          }
+          else if (hobby.length == 0) {
+            $("#hobby").focus();
+          }
+          else if (profilePhoto.length == 0) {
+            $("#profilePhoto").focus();
+          }
+          else {
+            swal('Submitted','Your details are Submitted for verifications. Thank You :)','success');
+          }
         });
     });
 </script>
