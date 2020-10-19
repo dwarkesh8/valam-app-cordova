@@ -33,31 +33,28 @@
             <meta name="format-detection" content="telephone=no">
             <meta name="msapplication-tap-highlight" content="no">
             <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-            <meta name="color-scheme" content="light dark">
+            <!-- <meta name="color-scheme" content="light dark"> -->
             <link rel="stylesheet" href="css/index.css">
             <link rel="stylesheet" type="text/css" href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css">
             <link rel="stylesheet" type="text/css" href="assets/fontawesome-free-5.13.0-web/css/all.min.css">
             <title>CharotarValamApp</title>
         </head>
         <body>
-            <div class="app">
-                <h1>Valam Brahmin Samaj</h1>
-                <div id="deviceready" class="blink">
-                    <p class="event listening">Welcome</p>
-                    <p class="event received">Get registered</p>
+            <div class="container">
+                <div align="center">
+                    <div class="loader"></div>
+                    <br>
+                    <h4>Loading...</h4>
                 </div>
+            </div>
+            <div align="center">
+                <h5>Charotar Valam Brahmin</h5>
+                <h6>Welcomes you <span class="fa fa-smile"></span></h6>
             </div>
             <script type="text/javascript" src="assets/bootstrap-4.4.1-dist/js/jquery.min.js"></script>
             <script type="text/javascript" src="assets/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
             <script type="text/javascript" src="assets/fontawesome-free-5.13.0-web/js/all.min.js"></script>
             <script src="cordova.js"></script>
             <script src="js/index.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    setTimeout(function() {
-                        window.location = 'register.html';
-                    }, 2000);
-                });
-            </script>
         </body>
         </html>

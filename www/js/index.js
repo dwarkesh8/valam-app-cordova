@@ -1,3 +1,8 @@
+$(document).ready(function(){
+	setTimeout(function() {
+		window.location = 'menu.html';
+	}, 3000);
+});
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,6 +24,7 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
+/*default
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
@@ -26,4 +32,4 @@ function onDeviceReady() {
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
-}
+}*/
