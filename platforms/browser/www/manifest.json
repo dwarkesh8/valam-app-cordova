@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "CharotarValamApp",
+  "short_name": "CharotarValamApp",
+  "version": "com.charotarvalam.app",
+  "description": "A sample demo android app",
+  "author": "Charotar IT Solutions Team",
+  "icons": [],
+  "start_url": "index.html"
+}

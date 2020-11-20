@@ -1,33 +1,19 @@
 body {
-    font-family: Verdana, Geneva, sans-serif;
-    background-color: #000 !important;
-    padding-top: 20px;
-    padding-bottom: 20px; 
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #e1ddcf !important;
 }
-.loader {
-    border: 10px solid blue;
-    border-radius: 50%;
-    border-top: 10px solid #fd7e14;
-    border-bottom: 10px solid #fd7e14;
-    width: 80px;
-    height: 80px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px orange;
 }
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-h4,h5,h6 {
-    color: #fd7e14;
-}
-.fa-smile {
-    color: yellow !important;
+p {
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
 }

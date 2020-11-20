@@ -1,6 +1,7 @@
+#mainDiv { visibility:hidden; }
 body {
 	font-family: Verdana, Geneva, sans-serif;
-	background-color: #000 !important;
+	background-color: #e1ddcf !important;
 }
 div#heading {
 	text-align: center;
@@ -12,28 +13,87 @@ div#heading {
 }
 label {
 	font-size: 12px;
-	color: white;
 	font-weight: bold;
 }
-button#btnSubmit {
-	margin-bottom: 5px;
+#exampleModal {
+	max-height: 500px;
+	overflow-y: auto;
 }
-div.footer {
-	margin-top: 15px;
-	background-color: #fd7e14;
-	bottom: 0;
-	position: fixed;
-	left: 0;
-	width: 100%;
-	text-align: center;
+.bg-custom {
+	background-color: #e1ddcf;
 }
-div.footer p {
-	color: #000;
-	font-size: 12px;
+div[id=marriageDetails] {
+	display: none;
 }
-.form-control {
-	border: 1px solid #fff !important;
-	background-color: #000;
-	color: white;
-	font-weight: bold;
+input[type=file] {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	border: none !important;
 }
+/*begin-spinner*/
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: black;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+#loading {
+  width: 100px;
+  height: 100px;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+/*end-spinner*/

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  $("#loading").css('display','none');
+  $("#mainDiv").css('visibility','visible');
+  
   $("#gotoBack").on("click",function(){
     window.location = 'menu.html';
   });
@@ -16,6 +19,15 @@ $(document).ready(function(){
       $("input#inputTextGotr").attr('hidden', true);
     }
   });
+  $('input:radio[name="maritial_status"]').change(
+    function(){
+        if ($(this).is(':checked') && $(this).val() == 'married') {
+            $("#marriageDetails").fadeIn(800);
+        }
+        else {
+            $("#marriageDetails").fadeOut(800);
+          }
+    });
         //form submit process
         $("button#btnSubmit").on("click", function(){
           var username = $("#websiteUsername").val();
@@ -103,7 +115,9 @@ $(document).ready(function(){
             $("#profilePhoto").focus();
           }
           else {
-            swal('Submitted','Your details are Submitted for verifications. Thank You :)','success');
+            swal('Submitted','Your details are Submitted for verifications. Thank You :)','success').then((value)=>{
+              $("#exampleModal").modal('toggle');
+            });
           }
         });
       });

@@ -1,7 +1,13 @@
 $(document).ready(function(){
 	setTimeout(function() {
 		window.location = 'menu.html';
-	}, 3000);
+	}, 2000);
+	setInterval(function() {
+		$('#titleText').css('color', 'orange');
+		$('#titleText').css('text-shadow', '0 0 25px yellow');
+		$('img').css('box-shadow','0 0 25px yellow');
+	}, 1000);
+
 });
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
