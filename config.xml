@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.charotarvalam.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.charotarvalam.app" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CharotarValamApp</name>
     <description>
-        A sample demo android app
+        A sample demo android app for "Charotar Valam Brahmin"
     </description>
     <author email="contact@charotaritsolutions.com" href="https://charotaritsolutions.com">
         Charotar IT Solutions Team
