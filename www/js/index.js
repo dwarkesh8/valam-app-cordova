@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	setTimeout(function() {
 		window.location = 'menu.html';
-	}, 2000);
+	}, 3000);
 	setInterval(function() {
 		$('#titleText').css('color', 'orange');
 		$('#titleText').css('text-shadow', '0 0 25px yellow');

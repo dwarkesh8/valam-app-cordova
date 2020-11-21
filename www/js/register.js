@@ -19,17 +19,25 @@ $(document).ready(function(){
       $("input#inputTextGotr").attr('hidden', true);
     }
   });
+  $('#profilePhoto').bind('change', function() {
+    var size = parseInt(Math.ceil(this.files[0].size / 1024));
+    if (size > 3000) {
+      $('#profilePhoto').val('');
+      swal('Large file','File larger than 3MB is not allowed!','error');  
+    }
+  });
   $('input:radio[name="maritial_status"]').change(
     function(){
-        if ($(this).is(':checked') && $(this).val() == 'married') {
-            $("#marriageDetails").fadeIn(800);
-        }
-        else {
-            $("#marriageDetails").fadeOut(800);
-          }
+      if ($(this).is(':checked') && $(this).val() == 'married') {
+        $("#marriageDetails").fadeIn(800);
+      }
+      else {
+        $("#marriageDetails").fadeOut(800);
+      }
     });
         //form submit process
         $("button#btnSubmit").on("click", function(){
+
           var username = $("#websiteUsername").val();
           var password = $("#pwd").val();
           var email = $("#email").val();

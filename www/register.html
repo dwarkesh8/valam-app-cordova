@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark">
+  <!-- <meta name="color-scheme" content="light dark"> -->
   <link rel="stylesheet" type="text/css" href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/fontawesome-free-5.13.0-web/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="css/register.css">
@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-md-12" id="heading">
         <div class="container">
-          <span class="fa fa-arrow-left float-left" style="font-size: 32px;" id="gotoBack"></span>
+          <span class="fa fa-arrow-left float-left" style="font-size: 32px; padding-bottom: 5px;" id="gotoBack"></span>
         </div>
       </div>
     </div>
@@ -73,11 +73,10 @@
                   </form>
                 </div>
               </div>
-              <br>
-              <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-md btn-primary btn-block" id="btnSubmit"> <span class="fa fa-plus"></span> Add Member</button>
+              <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-md btn-default btn-block mt-2"> <span class="fa fa-plus"></span> Add Member</button>
             </div>
           </div>
-          <div class="modal mt-2" id="exampleModal" tabindex="-1" role="dialog">
+          <div class="modal mt-5" id="exampleModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -99,6 +98,10 @@
                     <div class="form-group">
                       <label for="email"><span class="fa fa-envelope"></span> Email</label>
                       <input type="email" class="form-control form-control-sm" name="email" placeholder="Ex: username@gmail.com" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="dob"><span class="fa fa-calendar"></span> Date of Birth</label>
+                      <input type="date" class="form-control form-control-sm" name="dob" id="dob">
                     </div>
                     <div class="form-group">
                       <label for="firstName"><span class="fa fa-id-card"></span> first Name</label>
@@ -141,27 +144,35 @@
                     <div class="form-group">
                       <label><span class="fa fa-heart"></span> Maritial Status</label><br>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="maritial_status" id="radioUnmarried" value="unmarried" checked>
-                        <label class="form-check-label" for="radioUnmarried">Unmarried</label>
+                        <input class="form-check-input" type="radio" name="maritial_status" id="radioSingle" value="unmarried" checked>
+                        <label class="form-check-label" for="radioSingle">Single</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="maritial_status" id="radioMarried" value="married">
                         <label class="form-check-label" for="radioMarried">Married</label>
                       </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="maritial_status" id="radioSeparated" value="separated">
+                        <label class="form-check-label" for="radioSeparated">Separated</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="maritial_status" id="radioDivorced" value="divorced">
+                        <label class="form-check-label" for="radioDivorced">Divorced</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="maritial_status" id="radioWidowed" value="widowed">
+                        <label class="form-check-label" for="radioWidowed">Widowed</label>
+                      </div>
                     </div>
                     <div id="marriageDetails">
                       <div class="form-group">
                         <label><span class="fa fa-calendar"></span> Marriage Date</label>
-                        <input type="date" name="marriage_date" class="form-control-sm">
+                        <input type="date" name="marriage_date" class="form-control form-control-sm">
                       </div>
                       <div class="form-group">
                         <label><span class="fa fa-id-card"></span> Spouce Name</label>
-                        <input type="text" name="spouce_name" class="form-control-sm">
+                        <input type="text" name="spouce_name" class="form-control form-control-sm">
                       </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="dob"><span class="fa fa-calendar"></span> Date of Birth</label>
-                      <input type="date" class="form-control form-control-sm" name="dob" id="dob">
                     </div>
                     <div class="form-group">
                       <label for="current_place"><span class="fa fa-home"></span> Current place</label>
@@ -169,7 +180,13 @@
                     </div>
                     <div class="form-group">
                       <label for="address"><span class="fa fa-home"></span> Address</label>
-                      <textarea class="form-control form-control-sm" placeholder="Ex: D/1, Ambika society, Nadiad, Gujarat" id="address"></textarea>
+                      <input type="text" placeholder="House No: 03/H" class="form-control form-control-sm">
+                      <input type="text" placeholder="Society/Apartment: Ambika flat" class="form-control form-control-sm">
+                      <input type="text" placeholder="City: Nadiad" class="form-control form-control-sm">
+                      <input type="text" placeholder="Dist: Kheda" class="form-control form-control-sm">
+                      <input type="text" placeholder="State: Gujarat" class="form-control form-control-sm">
+                      <input type="number" placeholder="PIN: 123321" class="form-control form-control-sm">
+                      <!-- <textarea class="form-control form-control-sm" placeholder="Ex: D/1, Ambika society, Nadiad, Gujarat" id="address"></textarea> -->
                     </div>
                     <div class="form-group">
                       <label for="occupation"><span class="fa fa-suitcase"></span> Occupation</label>
@@ -191,8 +208,9 @@
                       <input type="number" min="0" class="form-control form-control-sm" name="contact" placeholder="912233658545" id="contact" autocomplete="off">
                     </div>
                     <div class="form-group">
-                      <label for="landlineNo"><span class="fa fa-phone"></span> Landline no.</label>
-                      <input type="number" min="0" class="form-control form-control-sm" name="landline_no" placeholder="02697238743" id="landlineNo" autocomplete="off">
+                      <label for="ln_code"><span class="fa fa-phone"></span> Landline no.</label>
+                      <input type="number" min="0" maxlength="4" minlength="4" class="form-control form-control-sm" name="ln_code" placeholder="02697" id="ln_code" autocomplete="off">
+                      <input type="number" min="0" maxlength="6" minlength="6" class="form-control form-control-sm" name="ln_number" placeholder="238743" id="ln_number" autocomplete="off">
                     </div>
                     <div class="form-group">
                       <label for="officeNo"><span class="fa fa-phone"></span> Office no.</label>
