@@ -4,12 +4,12 @@ body {
 	background-color: #e1ddcf !important;
 }
 div#heading {
-	text-align: center;
-	background-color: #fd7e14;
-	color: white;
-	font-weight: bold;
-	padding-top: 5px;
-	margin: auto;
+	/*text-align: center;*/
+	background-color: orangered;
+  color: white;
+  font-weight: bold;
+  padding-top: 5px;
+  margin: auto;
 }
 label {
 	font-size: 12px;

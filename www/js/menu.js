@@ -1,9 +1,11 @@
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "200px";
+  document.getElementById("mainDiv").style.filter = "blur(8px)";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mainDiv").style.filter = "blur(0px)";
 }
 $(document).ready(function(){
 	$("#loading").css('display','none');

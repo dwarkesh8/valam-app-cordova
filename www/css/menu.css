@@ -1,11 +1,11 @@
 #mainDiv { visibility:hidden; }
 body {
-    font-family: Verdana, Geneva, sans-serif;
-    background-color: #e1ddcf !important;
+    font-family: 'Times New Roman';
+    background-color: #fff !important;
 }
 div#heading {
   /*text-align: center;*/
-  background-color: #fd7e14;
+  background-color: orangered;
   color: white;
   font-weight: bold;
   padding-top: 5px;
@@ -18,7 +18,7 @@ div#heading {
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #2ee8a266;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -43,23 +43,12 @@ div#heading {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  margin-top: -10px;
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
-
-h1,h6 {
-	color: #fd7e14;
-}
-table td {
-	text-align: center;
-	padding-top: 50px !important;
-	padding-bottom: 50px !important;
-	padding-left: 10px !important;
-	padding-right: 10px !important;
-	border: 1px solid white !important;
 }
 /*begin-spinner*/
 .lds-ellipsis {
@@ -128,3 +117,17 @@ table td {
   position: absolute;
 }
 /*end-spinner*/
+img.d-block {
+  min-height: 300px;
+  max-height: 300px;
+}
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #2ee8a266;
+}
+.fa-heart {color: red !important;}
