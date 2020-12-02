@@ -1,125 +1,41 @@
-#mainDiv { visibility:hidden; }
-body {
-    font-family: 'Times New Roman';
-    background-color: #fff !important;
-}
-div#heading {
-  /*text-align: center;*/
-  background-color: orangered;
-  color: white;
-  font-weight: bold;
-  padding-top: 5px;
-  margin: auto;
-}
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  background-color: #2ee8a2c4;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: orange;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 30px;
-  margin-top: -10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-/*begin-spinner*/
-.lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-ellipsis div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: black;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-@keyframes lds-ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
-  }
-}
-#loading {
-  width: 100px;
-  height: 100px;
-  top:0;
+.logout-div {
   bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
   position: absolute;
 }
-/*end-spinner*/
-img.d-block {
-  min-height: 300px;
-  max-height: 300px;
+.form-input {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+}
+.form-input:focus {
+  border-bottom: 2px solid blue;
+}
+#btnSignin {
+  padding: 5px 5px 5px 5px;
+  background-color: white;
+  border: 1px solid black;
+  font-weight: bold;
+  color: black
+}
+#btnSignin:hover {
+  box-shadow: 0 0 5px blue;
+}
+
+#btnClose {
+  padding: 5px 5px 5px 5px;
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+}
+#btnClose:hover {
+  box-shadow: 0 0 5px red;
+}
+#responseMsg {
+  font-size: 12px;
 }
 .footer {
   text-align: center;
@@ -128,6 +44,5 @@ img.d-block {
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: #2ee8a266;
+  background-color: #f5e638;
 }
-.fa-heart {color: red !important;}

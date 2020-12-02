@@ -1,3 +1,12 @@
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mainDiv").style.filter = "blur(8px)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mainDiv").style.filter = "blur(0px)";
+}
 $(document).ready(function(){
   $("#loading").css('display','none');
   $("#mainDiv").css('visibility','visible');
@@ -26,106 +35,103 @@ $(document).ready(function(){
       swal('Large file','File larger than 3MB is not allowed!','error');  
     }
   });
-  $('input:radio[name="maritial_status"]').change(
-    function(){
-      if ($(this).is(':checked') && $(this).val() == 'married') {
-        $("#marriageDetails").fadeIn(800);
-      }
-      else {
-        $("#marriageDetails").fadeOut(800);
-      }
-    });
-        //form submit process
-        $("button#btnSubmit").on("click", function(){
+  $('input:radio[name="maritial_status"]').change(function(){
+    if ($(this).is(':checked') && $(this).val() == 'married') {
+      $("#marriageDetails").fadeIn(800);
+    }
+    else {
+      $("#marriageDetails").fadeOut(800);
+    }
+  });
+  //form submit process
+  $("button#btnSubmit").on("click", function(){
 
-          var username = $("#websiteUsername").val();
-          var password = $("#pwd").val();
-          var email = $("#email").val();
-          var surname = $("#surname").val();
-          var firstName = $("#firstName").val();
-          var fatherName = $("#fatherName").val();
-          var motherName = $("#motherName").val();
-          var nationality = $("#nationality").val();
-          var selectGotr = $("#selectGotr").val();
-          var dob = $("#dob").val();
-          var native = $("#native").val();
-          var current_place = $("#current_place").val();
-          var address = $("#address").val();
-          var occupation = $("#occupation").val();
-          var education = $("#education").val();
-          var contact = $("#contact").val();
-          var landlineNo = $("#landlineNo").val();
-          var officeNo = $("#officeNo").val();
-          var hobby = $("#hobby").val();
-          var profilePhoto = $("#profilePhoto").val();
-          var agreeTC = $("#agreeTC").val();
-          if (username.length == 0) {
-            $("#websiteUsername").focus();
-          }
-          else if (password.length == 0) {
-            $("#pwd").focus();
-          }
-          else if (email.length == 0) {
-            $("#email").focus();
-          }
-          else if (surname.length == 0) {
-            $("#surname").focus();
-          }
-          else if (firstName.length == 0) {
-            $("#firstName").focus();
-          }
-          else if (fatherName.length == 0) {
-            $("#fatherName").focus();
-          }
-          else if (motherName.length == 0) {
-            $("#motherName").focus();
-          }
-          else if (motherName.length == 0) {
-            $("#motherName").focus();
-          }
-          else if (nationality.length == 0) {
-            $("#nationality").focus();
-          }
-          else if (selectGotr.length == 0) {
-            $("#selectGotr").focus();
-          }
-          else if (dob.length == 0) {
-            $("#dob").focus();
-          }
-          else if (native.length == 0) {
-            $("#native").focus();
-          }
-          else if (current_place.length == 0) {
-            $("#current_place").focus();
-          }
-          else if (address.length == 0) {
-            $("#address").focus();
-          }
-          else if (occupation.length == 0) {
-            $("#occupation").focus();
-          }
-          else if (education.length == 0) {
-            $("#education").focus();
-          }
-          else if (contact.length == 0 || contact.length > 14) {
-            $("#contact").focus();
-          }
-          else if (landlineNo.length == 0 || landlineNo.length > 12) {
-            $("#landlineNo").focus();
-          }
-          else if (officeNo.length == 0 || officeNo.length > 12) {
-            $("#officeNo").focus();
-          }
-          else if (hobby.length == 0) {
-            $("#hobby").focus();
-          }
-          else if (profilePhoto.length == 0) {
-            $("#profilePhoto").focus();
-          }
-          else {
-            swal('Submitted','Your details are Submitted for verifications. Thank You :)','success').then((value)=>{
-              $("#exampleModal").modal('toggle');
-            });
-          }
-        });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // var agreeTC                = $("#agreeTC").val();
+
+    let url = 'http://localhost/test-projects/valam-app-APIs/api.php';
+    $.post(url, {
+      surname:                $("#surname").val(),
+      gotr:                   $("#selectGotr").val(),
+      nationality:            $("#nationality").val(),
+      native_place:           $("#native_place").val(),
+      password:               $("#pwd").val(),
+      username:               $("#websiteUsername").val(),
+      email:                  $("#email").val(),
+      dob:                    $("#dob").val(),
+      first_name:             $("#firstName").val(),
+      father_name:            $("#fatherName").val(),
+      mother_name:            $("#motherName").val(),
+      status:                 $("input[name=status]:checked").val(),
+      gender:                 $("input[name=gender]:checked").val(),
+      maritial_status:        $("input[name=maritial_status]:checked").val(),
+      marriage_date:          $("input[name=marriage_date]").val(),
+      spouce_name:            $("input[name=spouce_name]").val(),
+      current_place:          $("input[name=current_place]").val(),
+      house_no:               $("#house_no"),
+      flat_society_apartment: $("#flat_society_apartment"),
+      city:                   $("#city"),
+      dist:                   $("#dist"),
+      state:                  $("#state"),
+      pincode:                $("#pincode"),
+      occupation:             $("#occupation").val(),
+      education:              $("#education").val(),
+      contact_no:             $("#contact").val(),
+      landline_code:          $("#landlineNo").val(),
+      landline_no:            $("#landline_no").val(),
+      office_no:              $("#officeNo").val(),
+      job_details:            $("#job").val(),
+      other_details:          $("#otherDetails").val(),
+      hobbies:                $("#hobbies").val(),
+      spacs:                  $("input[name=spacs]:checked").val(),
+      physically_challenged:  $("input[name=physically_challenged]:checked").val(),
+      profile_photo:          $("#profilePhoto").val(),
+      cmd:                    'register'}, function(response){
+        var obj = JSON.parse(response);
+        if (obj.status == 'true') {
+          swal('Submitted','Your details are Submitted for verifications. Thank You :)','success').then((value)=>{
+            $("#exampleModal").modal('toggle');
+          });
+        }
+        else {
+          swal('Try Again!','Something went wrong, please try again','error').then((value)=>{
+            $("#exampleModal").modal('toggle');
+          });
+        }
       });
+  });
+});
