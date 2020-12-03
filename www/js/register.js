@@ -20,6 +20,9 @@ $(document).ready(function(){
   });
   $("select#selectGotr").on("change", function(){
     var gotr = $(this).val();
+    if (gotr !== 'add_new') {
+      $("input[name=finalGotr]").val(gotr);
+    }
     if (gotr == 'add_new') {
       $("input#inputTextGotr").attr('hidden', false);
       $("input#inputTextGotr").focus();
@@ -28,110 +31,30 @@ $(document).ready(function(){
       $("input#inputTextGotr").attr('hidden', true);
     }
   });
-  $('#profilePhoto').bind('change', function() {
-    var size = parseInt(Math.ceil(this.files[0].size / 1024));
-    if (size > 3000) {
-      $('#profilePhoto').val('');
-      swal('Large file','File larger than 3MB is not allowed!','error');  
-    }
-  });
-  $('input:radio[name="maritial_status"]').change(function(){
-    if ($(this).is(':checked') && $(this).val() == 'married') {
-      $("#marriageDetails").fadeIn(800);
-    }
-    else {
-      $("#marriageDetails").fadeOut(800);
-    }
+  $("input#inputTextGotr").on('blur', function(){
+    $("input[name=finalGotr]").val($(this).val());
   });
   //form submit process
-  $("button#btnSubmit").on("click", function(){
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // var agreeTC                = $("#agreeTC").val();
-
+  $("button#btnRegister").on("click", function(){
     let url = 'http://localhost/test-projects/valam-app-APIs/api.php';
     $.post(url, {
-      surname:                $("#surname").val(),
-      gotr:                   $("#selectGotr").val(),
-      nationality:            $("#nationality").val(),
-      native_place:           $("#native_place").val(),
-      password:               $("#pwd").val(),
-      username:               $("#websiteUsername").val(),
-      email:                  $("#email").val(),
-      dob:                    $("#dob").val(),
-      first_name:             $("#firstName").val(),
-      father_name:            $("#fatherName").val(),
-      mother_name:            $("#motherName").val(),
-      status:                 $("input[name=status]:checked").val(),
-      gender:                 $("input[name=gender]:checked").val(),
-      maritial_status:        $("input[name=maritial_status]:checked").val(),
-      marriage_date:          $("input[name=marriage_date]").val(),
-      spouce_name:            $("input[name=spouce_name]").val(),
-      current_place:          $("input[name=current_place]").val(),
-      house_no:               $("#house_no"),
-      flat_society_apartment: $("#flat_society_apartment"),
-      city:                   $("#city"),
-      dist:                   $("#dist"),
-      state:                  $("#state"),
-      pincode:                $("#pincode"),
-      occupation:             $("#occupation").val(),
-      education:              $("#education").val(),
-      contact_no:             $("#contact").val(),
-      landline_code:          $("#landlineNo").val(),
-      landline_no:            $("#landline_no").val(),
-      office_no:              $("#officeNo").val(),
-      job_details:            $("#job").val(),
-      other_details:          $("#otherDetails").val(),
-      hobbies:                $("#hobbies").val(),
-      spacs:                  $("input[name=spacs]:checked").val(),
-      physically_challenged:  $("input[name=physically_challenged]:checked").val(),
-      profile_photo:          $("#profilePhoto").val(),
-      cmd:                    'register'}, function(response){
-        var obj = JSON.parse(response);
-        if (obj.status == 'true') {
-          swal('Submitted','Your details are Submitted for verifications. Thank You :)','success').then((value)=>{
-            $("#exampleModal").modal('toggle');
-          });
-        }
-        else {
-          swal('Try Again!','Something went wrong, please try again','error').then((value)=>{
-            $("#exampleModal").modal('toggle');
-          });
-        }
-      });
+      surname: $("#surname").val(),
+      gotr: $("input[name=finalGotr]").val(),
+      nationality: $("#nationality").val(),
+      native_place: $("#native_place").val(),
+      email: $("#email").val(),
+      password: $("#password").val(),
+      cmd: 'register'
+    }, function(response){
+      var obj = JSON.parse(response);
+      if (obj.status == 'true') {
+        swal('Submitted','Your details are Submitted for verifications. Thank You :)','success').then((value)=>{
+          window.location = 'menu.html';
+        });
+      }
+      else {
+        swal('Try Again!','Something went wrong, please try again','error');
+      }
+    });
   });
 });

@@ -38,7 +38,9 @@ $(document).ready(function(){
     $("#imgUserIcon").attr('src',getCookie('loginUserProfilePhoto'));
     $("#spanLoginModal").attr("data-toggle","");
     $("#spanLoginModal").attr("data-target","");
-    $(".username").html('<span class="fa fa-user"></span> '+getCookie('loginUsername'));
+    $(".surname").html('<span class="fa fa-user"></span> '+getCookie('loginUsername').charAt(0).toUpperCase()+getCookie('loginUsername').slice(1));
+    $(".after-login").attr('hidden',false);
+    $(".before-login").attr('hidden',true);
   }
   else {
     $("#imgUserIcon").attr('hidden',true);
@@ -46,7 +48,9 @@ $(document).ready(function(){
     $("#imgUserIcon").attr('src',"");
     $("#spanLoginModal").attr("data-toggle","modal");
     $("#spanLoginModal").attr("data-target","#loginModal");
-    $(".username").html('');
+    $(".surname").html('');
+    $(".after-login").attr('hidden',true);
+    $(".before-login").attr('hidden',false);
   }
 
   $("a#aLogout").on("click", function(){

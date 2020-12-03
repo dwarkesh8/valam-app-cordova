@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$("#loading").css('display','none');
 	$("#mainDiv").css('visibility','visible');
 
-	$("input[name=username]").on('blur', function(){
+	$("input[name=email]").on('blur', function(){
 		if ($(this).val().length <= 0) {
 			$(this).css('border-bottom','2px solid red');
 		}
@@ -29,12 +29,12 @@ $(document).ready(function(){
 	});
 
 	$("#btnSignin").on('click', function(){
-		var username = $("input[name=username]").val();
+		var email = $("input[name=email]").val();
 		var password = $("input[name=password]").val();
-		if (username.length <= 0) {
-			$("input[name=username]").focus();
-			$("input[name=username]").css('border-bottom','2px solid red');
-			$("#responseMsg").text('Enter the Username!');
+		if (email.length <= 0) {
+			$("input[name=email]").focus();
+			$("input[name=email]").css('border-bottom','2px solid red');
+			$("#responseMsg").text('Enter the Email!');
 			$("#responseMsg").css('color','red');
 			return false;
 		}
@@ -47,12 +47,13 @@ $(document).ready(function(){
 		}
 		else {
 			let url = 'http://localhost/test-projects/valam-app-APIs/api.php';
-			$.post(url, {username: username,password:password,cmd:'login'}, function(response){
+			$.post(url, {email: email,password:password,cmd:'login'}, function(response){
+				console.log(response);
 				var obj = JSON.parse(response);
 				if (obj.status == 'true') {
 					setCookie('isUserLogin','yes',1);
 					setCookie('loginId',obj.msg.id,1);
-					setCookie('loginUsername',obj.msg.username,1);
+					setCookie('loginUsername',obj.msg.surname,1);
 					setCookie('loginUserProfilePhoto',obj.msg.profile_photo,1);
 					$("#loginModal").modal("toggle");
 					window.location = '';
