@@ -25,6 +25,25 @@ $(document).ready(function(){
       $('#profilePhoto').val('');
       swal('Large file','File larger than 3MB is not allowed!','error');  
     }
+    else {
+      var file_data = $(this).prop('files')[0];   
+      var form_data = new FormData();                  
+      form_data.append('file', file_data);
+
+      let url = 'http://localhost/test-projects/valam-app-APIs/api.php?upload=true';
+      $.ajax({
+        url: url, // point to server-side PHP script 
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,                         
+        type: 'post',
+        success: function(response){
+          console.log(response);
+        }
+      });
+    }
   });
   $('input:radio[name="maritial_status"]').change(function(){
     if ($(this).is(':checked') && $(this).val() == 'married') {
