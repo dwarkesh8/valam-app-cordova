@@ -34,6 +34,33 @@ $(document).ready(function(){
   $("input#inputTextGotr").on('blur', function(){
     $("input[name=finalGotr]").val($(this).val());
   });
+  $('#profilePhoto').bind('change', function() {
+    var size = parseInt(Math.ceil(this.files[0].size / 1024));
+    if (size > 3000) {
+      $('#profilePhoto').val('');
+      swal('Large file','File larger than 3MB is not allowed!','error');  
+    }
+    else {
+      var file_data = $(this).prop('files')[0];
+      $("#profilePhotoName").val(file_data.name);
+      var form_data = new FormData();                  
+      form_data.append('file', file_data);
+
+      let url = 'http://localhost/test-projects/valam-app-APIs/api.php?upload=true';
+      $.ajax({
+        url: url, // point to server-side PHP script 
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,                         
+        type: 'post',
+        success: function(response){
+          console.log(response);
+        }
+      });
+    }
+  });
   //form submit process
   $("button#btnRegister").on("click", function(){
     let url = 'http://localhost/test-projects/valam-app-APIs/api.php';
@@ -44,6 +71,7 @@ $(document).ready(function(){
       native_place: $("#native_place").val(),
       email: $("#email").val(),
       password: $("#password").val(),
+      family_photo: $("#profilePhotoName").val(),
       cmd: 'register'
     }, function(response){
       var obj = JSON.parse(response);

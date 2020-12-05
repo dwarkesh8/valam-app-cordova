@@ -26,7 +26,8 @@ $(document).ready(function(){
       swal('Large file','File larger than 3MB is not allowed!','error');  
     }
     else {
-      var file_data = $(this).prop('files')[0];   
+      var file_data = $(this).prop('files')[0];
+      $("#profilePhotoName").val(file_data.name);
       var form_data = new FormData();                  
       form_data.append('file', file_data);
 
@@ -88,7 +89,7 @@ $(document).ready(function(){
       hobbies: $("#hobbies").val(),
       spacs: $("input[name=spacs]:checked").val(),
       physically_challenged: $("input[name=physically_challenged]:checked").val(),
-      profile_photo: $("#profilePhoto").val(),
+      profile_photo: $("#profilePhotoName").val(),
       cmd: 'add_member'
     }, function(response){
       console.log(response);

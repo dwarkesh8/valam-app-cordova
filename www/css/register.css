@@ -22,11 +22,6 @@ label {
 div[id=marriageDetails] {
 	display: none;
 }
-input[type=file] {
-	padding-top: 10px !important;
-	padding-bottom: 10px !important;
-	border: none !important;
-}
 #btnRegister {
   padding: 5px 5px 5px 5px;
   background-color: white;

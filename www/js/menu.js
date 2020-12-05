@@ -54,7 +54,7 @@ $(document).ready(function(){
 					setCookie('isUserLogin','yes',1);
 					setCookie('loginId',obj.msg.id,1);
 					setCookie('loginUsername',obj.msg.surname,1);
-					setCookie('loginUserProfilePhoto',obj.msg.profile_photo,1);
+					setCookie('loginUserProfilePhoto',obj.msg.family_photo,1);
 					$("#loginModal").modal("toggle");
 					window.location = '';
 				}

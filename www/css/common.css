@@ -135,3 +135,8 @@ div#heading {
   line-height: 60px;
   background-color: #f5e638;
 }
+input[type=file] {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border: none !important;
+}
