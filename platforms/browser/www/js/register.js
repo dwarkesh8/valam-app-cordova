@@ -1,4 +1,16 @@
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mainDiv").style.filter = "blur(8px)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mainDiv").style.filter = "blur(0px)";
+}
 $(document).ready(function(){
+  $("#loading").css('display','none');
+  $("#mainDiv").css('visibility','visible');
+  
   $("#gotoBack").on("click",function(){
     window.location = 'menu.html';
   });
@@ -8,6 +20,9 @@ $(document).ready(function(){
   });
   $("select#selectGotr").on("change", function(){
     var gotr = $(this).val();
+    if (gotr !== 'add_new') {
+      $("input[name=finalGotr]").val(gotr);
+    }
     if (gotr == 'add_new') {
       $("input#inputTextGotr").attr('hidden', false);
       $("input#inputTextGotr").focus();
@@ -16,94 +31,57 @@ $(document).ready(function(){
       $("input#inputTextGotr").attr('hidden', true);
     }
   });
-        //form submit process
-        $("button#btnSubmit").on("click", function(){
-          var username = $("#websiteUsername").val();
-          var password = $("#pwd").val();
-          var email = $("#email").val();
-          var surname = $("#surname").val();
-          var firstName = $("#firstName").val();
-          var fatherName = $("#fatherName").val();
-          var motherName = $("#motherName").val();
-          var nationality = $("#nationality").val();
-          var selectGotr = $("#selectGotr").val();
-          var dob = $("#dob").val();
-          var native = $("#native").val();
-          var current_place = $("#current_place").val();
-          var address = $("#address").val();
-          var occupation = $("#occupation").val();
-          var education = $("#education").val();
-          var contact = $("#contact").val();
-          var landlineNo = $("#landlineNo").val();
-          var officeNo = $("#officeNo").val();
-          var hobby = $("#hobby").val();
-          var profilePhoto = $("#profilePhoto").val();
-          var agreeTC = $("#agreeTC").val();
-          if (username.length == 0) {
-            $("#websiteUsername").focus();
-          }
-          else if (password.length == 0) {
-            $("#pwd").focus();
-          }
-          else if (email.length == 0) {
-            $("#email").focus();
-          }
-          else if (surname.length == 0) {
-            $("#surname").focus();
-          }
-          else if (firstName.length == 0) {
-            $("#firstName").focus();
-          }
-          else if (fatherName.length == 0) {
-            $("#fatherName").focus();
-          }
-          else if (motherName.length == 0) {
-            $("#motherName").focus();
-          }
-          else if (motherName.length == 0) {
-            $("#motherName").focus();
-          }
-          else if (nationality.length == 0) {
-            $("#nationality").focus();
-          }
-          else if (selectGotr.length == 0) {
-            $("#selectGotr").focus();
-          }
-          else if (dob.length == 0) {
-            $("#dob").focus();
-          }
-          else if (native.length == 0) {
-            $("#native").focus();
-          }
-          else if (current_place.length == 0) {
-            $("#current_place").focus();
-          }
-          else if (address.length == 0) {
-            $("#address").focus();
-          }
-          else if (occupation.length == 0) {
-            $("#occupation").focus();
-          }
-          else if (education.length == 0) {
-            $("#education").focus();
-          }
-          else if (contact.length == 0 || contact.length > 14) {
-            $("#contact").focus();
-          }
-          else if (landlineNo.length == 0 || landlineNo.length > 12) {
-            $("#landlineNo").focus();
-          }
-          else if (officeNo.length == 0 || officeNo.length > 12) {
-            $("#officeNo").focus();
-          }
-          else if (hobby.length == 0) {
-            $("#hobby").focus();
-          }
-          else if (profilePhoto.length == 0) {
-            $("#profilePhoto").focus();
-          }
-          else {
-            swal('Submitted','Your details are Submitted for verifications. Thank You :)','success');
-          }
-        });
+  $("input#inputTextGotr").on('blur', function(){
+    $("input[name=finalGotr]").val($(this).val());
+  });
+  $('#profilePhoto').bind('change', function() {
+    var size = parseInt(Math.ceil(this.files[0].size / 1024));
+    if (size > 3000) {
+      $('#profilePhoto').val('');
+      swal('Large file','File larger than 3MB is not allowed!','error');  
+    }
+    else {
+      var file_data = $(this).prop('files')[0];
+      $("#profilePhotoName").val(file_data.name);
+      var form_data = new FormData();                  
+      form_data.append('file', file_data);
+
+      let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php?upload=true';
+      $.ajax({
+        url: url,
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,                         
+        type: 'post',
+        success: function(response){
+          console.log(response);
+        }
       });
+    }
+  });
+  $("button#btnRegister").on("click", function(){
+    let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php';
+    $.post(url, {
+      surname: $("#surname").val(),
+      gotr: $("input[name=finalGotr]").val(),
+      nationality: $("#nationality").val(),
+      native_place: $("#native_place").val(),
+      email: $("#email").val(),
+      password: $("#password").val(),
+      family_photo: $("#profilePhotoName").val(),
+      cmd: 'register'
+    }, function(response){
+      var obj = JSON.parse(response);
+      if (obj.status == 'true') {
+        swal('Submitted','Your details are Submitted for verifications. Thank You :)','success').then((value)=>{
+          window.location = 'menu.html';
+        });
+      }
+      else {
+        swal('Try Again!','Something went wrong, please try again','error');
+      }
+    });
+  });
+});

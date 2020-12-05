@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	setTimeout(function() {
 		window.location = 'menu.html';
-	}, 3000);
+	}, 20000);
 	setInterval(function() {
 		$('#titleText').css('color', 'orange');
 		$('#titleText').css('text-shadow', '0 0 25px yellow');
@@ -30,12 +30,16 @@ $(document).ready(function(){
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-/*default
+/*default*/
 document.addEventListener('deviceready', onDeviceReady, false);
-
+document.addEventListener("offline", onOffline, false);
+document.addEventListener("online", onOnline, false);
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
-}*/
+}
+function onOffline() {
+	alert("You are offline");
+}
+function onOnline() {
+	alert("You are back to online");
+}
