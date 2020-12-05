@@ -46,7 +46,7 @@ $(document).ready(function(){
       var form_data = new FormData();                  
       form_data.append('file', file_data);
 
-      let url = 'http://localhost/test-projects/valam-app-APIs/api.php?upload=true';
+      let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php?upload=true';
       $.ajax({
         url: url, // point to server-side PHP script 
         dataType: 'text',  // what to expect back from the PHP script, if anything
@@ -63,7 +63,7 @@ $(document).ready(function(){
   });
   //form submit process
   $("button#btnRegister").on("click", function(){
-    let url = 'http://localhost/test-projects/valam-app-APIs/api.php';
+    let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php';
     $.post(url, {
       surname: $("#surname").val(),
       gotr: $("input[name=finalGotr]").val(),

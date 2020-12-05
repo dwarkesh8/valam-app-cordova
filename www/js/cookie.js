@@ -35,7 +35,7 @@ $(document).ready(function(){
   if (isLogin == true) {
     $("#spanLoginModal").attr('hidden',true);
     $("#imgUserIcon").removeAttr('hidden');
-    $("#imgUserIcon").attr('src','http://localhost/test-projects/valam-app-APIs/uploads/'+getCookie('loginUserProfilePhoto'));
+    $("#imgUserIcon").attr('src','https://charotaritsolutions.com/projects-demo/valam-app/uploads/'+getCookie('loginUserProfilePhoto'));
     $("#spanLoginModal").attr("data-toggle","");
     $("#spanLoginModal").attr("data-target","");
     $(".surname").html('<span class="fa fa-user"></span> '+getCookie('loginUsername').charAt(0).toUpperCase()+getCookie('loginUsername').slice(1));

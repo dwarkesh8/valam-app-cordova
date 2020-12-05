@@ -46,7 +46,7 @@ $(document).ready(function(){
 			return false;
 		}
 		else {
-			let url = 'http://localhost/test-projects/valam-app-APIs/api.php';
+			let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php';
 			$.post(url, {email: email,password:password,cmd:'login'}, function(response){
 				console.log(response);
 				var obj = JSON.parse(response);
