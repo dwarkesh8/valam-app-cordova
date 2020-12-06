@@ -140,3 +140,5 @@ input[type=file] {
   padding-bottom: 10px !important;
   border: none !important;
 }
+#profilePhoto {display: none;}
+.red {color: red;}

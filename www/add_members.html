@@ -45,31 +45,37 @@
               <div class="card-body">
                <form action="#">
                 <div class="form-group">
-                  <label for="websiteUsername"><span class="fa fa-id-card"></span> Website Username</label>
+                  <label for="websiteUsername"><span class="fa fa-id-card"></span> Website Username<span class="red">*</span></label>
                   <input type="text" class="form-control form-control-sm" name="website_username" placeholder="Ex: Dwarkesh" id="websiteUsername" autocomplete="off">
+                  <span id="websiteUsernameSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label for="email"><span class="fa fa-envelope"></span> Email</label>
+                  <label for="email"><span class="fa fa-envelope"></span> Email<span class="red">*</span></label>
                   <input type="email" class="form-control form-control-sm" name="email" placeholder="Ex: username@gmail.com" id="email">
+                  <span id="emailSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label for="dob"><span class="fa fa-calendar"></span> Date of Birth</label>
+                  <label for="dob"><span class="fa fa-calendar"></span> Date of Birth<span class="red">*</span></label>
                   <input type="date" class="form-control form-control-sm" name="dob" id="dob">
+                  <span id="dobSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label for="firstName"><span class="fa fa-id-card"></span> first Name</label>
+                  <label for="firstName"><span class="fa fa-id-card"></span> first Name<span class="red">*</span></label>
                   <input type="text" class="form-control form-control-sm" id="firstName" autocomplete="off">
+                  <span id="firstNameSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label for="fatherName"><span class="fa fa-id-card"></span> Father Name</label>
+                  <label for="fatherName"><span class="fa fa-id-card"></span> Father Name<span class="red">*</span></label>
                   <input type="text" class="form-control form-control-sm" name="father_name" id="fatherName" autocomplete="off">
+                  <span id="fatherNameSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label for="motherName"><span class="fa fa-id-card"></span> Mother Name</label>
+                  <label for="motherName"><span class="fa fa-id-card"></span> Mother Name<span class="red">*</span></label>
                   <input type="text" class="form-control form-control-sm" name="mother_name" placeholder="" id="motherName" autocomplete="off">
+                  <span id="motherNameSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label><span class="fa fa-info"></span> Status</label><br>
+                  <label><span class="fa fa-info"></span> Status<span class="red">*</span></label><br>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="status" id="statusLive" value="live" checked>
                     <label class="form-check-label" for="statusLive">Live</label>
@@ -78,9 +84,10 @@
                     <input class="form-check-input" type="radio" name="status" id="statusDead" value="dead">
                     <label class="form-check-label" for="statusDead">Dead</label>
                   </div>
+                  <span id="statusSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label><span class="fa fa-male"></span><span class="fa fa-female"></span> Gender</label><br>
+                  <label><span class="fa fa-male"></span><span class="fa fa-female"></span> Gender<span class="red">*</span></label><br>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="radioMale" value="male" checked>
                     <label class="form-check-label" for="radioMale">Male</label>
@@ -93,9 +100,10 @@
                     <input class="form-check-input" type="radio" name="gender" id="radioOther" value="other">
                     <label class="form-check-label" for="radioOther">Other</label>
                   </div>
+                  <span id="genderSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label><span class="fa fa-heart"></span> Maritial Status</label><br>
+                  <label><span class="fa fa-heart"></span> Maritial Status<span class="red">*</span></label><br>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="maritial_status" id="radioSingle" value="single" checked>
                     <label class="form-check-label" for="radioSingle">Single</label>
@@ -116,6 +124,7 @@
                     <input class="form-check-input" type="radio" name="maritial_status" id="radioWidowed" value="widowed">
                     <label class="form-check-label" for="radioWidowed">Widowed</label>
                   </div>
+                  <span id="maritialStatusSpan" class="red"></span>
                 </div>
                 <div id="marriageDetails">
                   <div class="form-group">
@@ -132,20 +141,26 @@
                   <input type="text" class="form-control form-control-sm" name="current_place" placeholder="Ex: Ahmedabad, Nadiad etc." id="current_place" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="address"><span class="fa fa-home"></span> Address</label>
+                  <label for="address"><span class="fa fa-home"></span> Address<span class="red">*</span></label>
                   <input type="text" id="house_no" placeholder="House No: 03/H" class="form-control form-control-sm">
+                  <span id="house_noSpan" class="red"></span>
                   <input type="text" id="flat_society_apartment" placeholder="Society/Apartment: Ambika flat" class="form-control form-control-sm">
+                  <span id="fsaSpan" class="red"></span>
                   <input type="text" id="city" placeholder="City: Nadiad" class="form-control form-control-sm">
+                  <span id="citySpan" class="red"></span>
                   <input type="text" id="dist" placeholder="Dist: Kheda" class="form-control form-control-sm">
+                  <span id="distSpan" class="red"></span>
                   <input type="text" id="state" placeholder="State: Gujarat" class="form-control form-control-sm">
+                  <span id="stateSpan" class="red"></span>
                   <input type="number" id="pincode" placeholder="PIN: 123321" class="form-control form-control-sm">
+                  <span id="pincodeSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label for="occupation"><span class="fa fa-suitcase"></span> Occupation</label>
                   <input type="text" class="form-control form-control-sm" placeholder="Ex: doctor, engineer, teacher etc." id="occupation" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="education"><span class="fa fa-graduation-cap"></span> Education</label>
+                  <label for="education"><span class="fa fa-graduation-cap"></span> Education<span class="red">*</span></label>
                   <select class="form-control form-control-sm" name="education" id="education">
                     <option value="below_10th">Below 10th</option>
                     <option value="10th_pass">10th pass</option>
@@ -154,31 +169,39 @@
                     <option value="post_graduate">Post Graduate</option>
                     <option value="phd">P.hd</option>
                   </select>
+                  <span id="educationSpan" class="red"></span>
                 </div>
                 <div class="form-group">
-                  <label for="contact_no"><span class="fa fa-mobile"></span> Contact no. (<i class="fab fa-whatsapp" aria-hidden="true"></i>)</label>
+                  <label for="contact_no"><span class="fa fa-mobile"></span> Contact no. (<i class="fab fa-whatsapp" aria-hidden="true"></i>)<span class="red">*</span></label>
                   <input type="number" min="0" class="form-control form-control-sm" name="contact_no" placeholder="912233658545" id="contact_no" autocomplete="off">
+                  <span id="contactNoSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label for="landline_code"><span class="fa fa-phone"></span> Landline no.</label>
                   <input type="number" min="0" maxlength="4" minlength="4" class="form-control form-control-sm" name="landline_code" placeholder="02697" id="landline_code" autocomplete="off">
-                  <input type="landline_no" min="0" maxlength="6" minlength="6" class="form-control form-control-sm" name="landline_no" placeholder="238743" id="landline_no" autocomplete="off">
+                  <span id="landlineCodeSpan" class="red"></span>
+                  <input type="number" min="0" maxlength="6" minlength="6" class="form-control form-control-sm" name="landline_no" placeholder="238743" id="landline_no" autocomplete="off">
+                  <span id="landlineNoSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label for="officeNo"><span class="fa fa-phone"></span> Office no.</label>
                   <input type="number" min="0" class="form-control form-control-sm" name="office_no" placeholder="02697238743" id="officeNo" autocomplete="off">
+                  <span id="officeNoSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label for="job"><span class="fa fa-suitcase"></span> Job detail</label>
                   <input type="text" class="form-control form-control-sm" name="job" placeholder="Ex: Self-employed, Govt. Job, Private Job etc." id="job" autocomplete="off">
+                  <span id="jobSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label for="otherDetails"><span class="fa fa-info"></span> Other detail</label>
                   <textarea class="form-control form-control-sm" name="other_details" placeholder="Any other info you want to provide..." id="otherDetails"></textarea>
+                  <span id="otherDetailsSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label for="hobbies"><span class="fa fa-list"></span> Hobbies</label>
                   <textarea class="form-control form-control-sm" placeholder="Reading, Games etc" id="hobbies"></textarea>
+                  <span id="hobbiesSpan" class="red"></span>
                 </div>
                 <div class="form-group">
                   <label><span class="fa fa-eye"></span> Do you have spacs?</label><br>
@@ -203,15 +226,18 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="profilePhoto"><span class="fa fa-camera"></span> Profile Photo</label>
-                  <input type="file" name="profile_photo" id="profilePhoto">
-                  <input type="hidden" id="profilePhotoName">
+                  <label for="profilePhoto"><span class="fa fa-camera"></span> Profile Photo<span class="red">*</span></label><br>
+                  <input type="file" name="profile_photo" id="profilePhoto" accept="image/*">
+                  <input type="button" value="Browse..." id="browseBtn" />
+                  <input type="hidden" id="profilePhotoName"><br>
+                  <span id="imgSpan"></span>
                 </div>
                 <div class="form-group form-check">
                   <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" id="agreeTC" checked> Agree with <a href="#!" id="tc">T&C</a>
                   </label>
                 </div>
+                <span id="submitSpan"></span>
               </div>
               <button type="button" id="btnRegister" class="btn btn-sm btn-block"> <span class="fa fa-save"></span> Register Now</button><br>
             </div>
@@ -233,9 +259,9 @@
   <script type="text/javascript" src="assets/fontawesome-free-5.13.0-web/js/all.min.js"></script>
   <script type="text/javascript">
     var isLogin = checkCookie('isUserLogin');
-  if (isLogin !== true) {
-    window.location = 'menu.html';
-  }
+    if (isLogin !== true) {
+      window.location = 'menu.html';
+    }
   </script>
 </body>
 </html>
