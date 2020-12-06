@@ -177,6 +177,12 @@ $(document).ready(function(){
       $("#hobbiesSpan").text('Max word limit: 500');
       return false;
     }
+    else if ($("#profilePhotoName").val() == '') {
+      $("#browseBtn").focus();
+      $("#imgSpan").text('Please choose a photo');
+      $("#imgSpan").css('color','red');
+      return false;
+    }
     else {
       let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php';
       $.post(url, {
