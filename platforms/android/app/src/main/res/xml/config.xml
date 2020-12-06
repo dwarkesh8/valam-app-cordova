@@ -15,7 +15,6 @@
         Charotar IT Solutions Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -23,6 +22,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <icon density="mdpi" height="57" platform="android" src="www/img/app-logo.png" width="57" />
-    <allow-intent href="market:*" />
+    <access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
