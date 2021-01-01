@@ -12,20 +12,21 @@ $(document).ready(function(){
 	$("#mainDiv").css('visibility','visible');
 
 	let url = 'https://charotaritsolutions.com/projects-demo/valam-app/api.php';
-	$.post(url, {cmd:'get_news'}, function(response){
+	$.post(url, {cmd:'get_donors'}, function(response){
 		var obj = JSON.parse(response);
 		var html = '';
 		if (response == 'false') {
-			html += '<div align="center"><h5>No news were found!</h5></div>';
+			html += '<div class="card"><div align="center"><div class="card-header"><h5>No records were found!</h5></div></div>';
 		}
 		else {
 			$.each(obj, function (key, val) {
-				html += '<div class="border" style="padding:5px 8px;">';
-				html += '<h5 class="card-title">'+val['title']+'</h5>';
-				html += '<p class="card-text" style="overflow-y: auto;max-height: 200px">'+val['news']+'</p>';
-				html += '</div>';
+				html += '<div class="card">';
+				html += '<div class="card-header">'+val["name"]+'</div>';
+				html += '<ul class="list-group list-group-flush">';
+				html += '<li class="list-group-item">Amount: '+val["amount"]+'</li>';
+				html += '<li class="list-group-item">Donated for: '+val["service"]+'</li></ul></div><br>';
 			});
 		}
-		$("#dynamicNewsPortal").html(html);
+		$("#dynamicDonorsDiv").html(html);
 	});
 });
